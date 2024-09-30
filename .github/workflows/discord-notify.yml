@@ -3,8 +3,7 @@ name: Notify Discord on Push
 on:
   push:
     branches:
-      - main  # Você pode alterar isso para o branch que deseja monitorar
-
+        main:
 jobs:
   notify:
     runs-on: ubuntu-latest
