@@ -1,20 +1,20 @@
-name: Notify Discord on Push
+name: Discord Webhook
 
 on:
   push:
     branches:
-        main:
+      - main  # Aqui está correto monitorar o branch main, se for esse o nome do seu branch principal
+
 jobs:
-  notify:
+  git:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-    - name: Send notification to Discord
-      uses: Ilshidur/action-discord-webhook@2.0.0
-      with:
-        webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        username: GitHub Actions
-        content: "Novo commit no repositório! :rocket:"
+      - name: Send message to Discord
+        run: |
+          curl -H "Content-Type: application/json" \
+            -X POST \
+            -d '{"content": "Novo commit no repositório!"}' \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
+
