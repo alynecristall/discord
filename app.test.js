@@ -1,5 +1,5 @@
 // app.test.js
-const { sum, multiply } = require('./app'); // Importe suas funções a serem testadas
+const { sum, multiply } = require('./app'); 
 
 test('soma de 1 e 2 deve ser 3', () => {
     expect(sum(1, 2)).toBe(3);
