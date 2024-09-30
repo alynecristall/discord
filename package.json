@@ -1,0 +1,11 @@
+{
+  "name": "devops-todo-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"  // Usando Jest para testes
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"  // Certifique-se de que a versão esteja atualizada
+  }
+}
