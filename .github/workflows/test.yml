@@ -1,0 +1,25 @@
+name: Run Tests
+
+on:
+  pull_request:
+    branches:
+      - main  # Monitora Pull Requests direcionadas ao branch main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Você pode mudar para a versão que está usando
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Executar testes
+        run: npm test  # Comando para rodar seus testes
