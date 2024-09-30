@@ -1,4 +1,4 @@
-// app.test.js
+
 const { sum, multiply } = require('./app'); 
 
 test('soma de 1 e 2 deve ser 3', () => {
